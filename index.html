@@ -1,205 +1,438 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- ===== META INFO ===== -->
+    <!-- Helps browsers and search engines understand your page -->
+    <meta
+      name="description"
+      content="Portfolio website for Ankita Sethi, Data Engineer and Machine Learning Researcher."
+    />
+    <title>Ankita Sethi | Portfolio</title>
 
-        <!-- =====BOX ICONS===== -->
-        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <!-- ===== EXTERNAL RESOURCES ===== -->
+    <!-- Boxicons: Used for icons (socials, scroll arrows, etc.) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts: Inter for text, Poppins for headings -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="./assets/css/styles.css" />
 
-        <title>Portfolio website complete</title>
-    </head>
-    <body>
-        <!--===== HEADER =====-->
-        <header class="l-header">
-            <nav class="nav bd-grid">
-                <div>
-                    <a href="#" class="nav__logo">Marlon</a>
-                </div>
+    <!-- EmailJS (used for contact form submissions) -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  </head>
 
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                        <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
-                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-                    </ul>
-                </div>
+  <body>
+    <!-- ===== HEADER ===== -->
+    <!-- Navigation bar that sticks to the top -->
+    <header>
+      <nav class="navbar container">
+        <a href="#home" class="logo">AK</a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="theme-toggle"><i class="bx bx-moon"></i></button>
+      </nav>
+    </header>
 
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class='bx bx-menu'></i>
-                </div>
-            </nav>
-        </header>
+    <main>
+      <!-- ===== HERO SECTION ===== -->
+      <!-- Landing area with intro, typing animation, and profile image -->
+      <section id="home" class="hero container">
+        <!-- Social bar with mail, LinkedIn, and GitHub -->
+        <div class="hero-social-bar">
+          <a href="mailto:ankitasethi282@gmail.com" target="_blank"
+            ><i class="bx bx-envelope"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/ankita-sethi21/" target="_blank"
+            ><i class="bx bxl-linkedin"></i
+          ></a>
+          <a href="https://github.com/ankita-sethi" target="_blank"
+            ><i class="bx bxl-github"></i
+          ></a>
+        </div>
 
-        <main class="l-main">
-            <!--===== HOME =====-->
-            <section class="home bd-grid" id="home">
-                <div class="home__data">
-                    <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">Marlon</span><br> Web Designer</h1>
+        <!-- Text Introduction -->
+        <div class="hero-text">
+          <h1>Hi, I’m <span class="highlight">Ankita Sethi</span></h1>
+          <h2 id="typing"></h2>
 
-                    <a href="#" class="button">Contact</a>
-                </div>
+          <!-- Buttons for Resume and Contact -->
+          <div class="hero-buttons">
+            <a
+              href="./Ankita Sethi Resume.pdf"
+              id="resume-btn"
+              class="btn primary"
+            >
+              <i class="bx bxs-download"></i> Resume
+            </a>
+            <a href="#contact" class="btn secondary">
+              <i class="bx bx-mail-send"></i> Contact
+            </a>
+          </div>
+        </div>
 
-                <div class="home__social">
-                    <a href="" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
-                    <a href="" class="home__social-icon"><i class='bx bxl-behance' ></i></a>
-                    <a href="" class="home__social-icon"><i class='bx bxl-github' ></i></a>
-                </div>
+        <!-- Profile Image with Animated Blob -->
+        <div class="hero-image">
+          <div class="blob"></div>
+          <img
+            src="./assets/img/pro.png"
+            alt="Ankita Sethi"
+            class="profile-photo"
+          />
+        </div>
 
-                <div class="home__img">
-                    <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <mask id="mask0" mask-type="alpha">
-                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
-                        </mask>
-                        <g mask="url(#mask0)">
-                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
-                            <image class="home__blob-img" x="50" y="60" href="assets/img/perfil.png"/>
-                        </g>
-                    </svg>
-                </div>
-            </section>
+        <!-- Scroll to About Section -->
+        <a href="#about" class="scroll-down">
+          <i class="bx bx-chevron-down"></i>
+        </a>
+      </section>
 
-            <!--===== ABOUT =====-->
-            <section class="about section " id="about">
-                <h2 class="section-title">About</h2>
+      <!-- ===== ABOUT SECTION ===== -->
+      <!-- Describes your academic and professional journey -->
+      <section id="about" class="section container">
+        <h2 class="section-title">About</h2>
 
-                <div class="about__container bd-grid">
-                    <div class="about__img">
-                        <img src="assets/img/about.jpg" alt="">
-                    </div>
-                    
-                    <div>
-                        <h2 class="about__subtitle">I'am Marlon</h2>
-                        <p class="about__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate cum expedita quo culpa tempora, assumenda, quis fugiat ut voluptates soluta, aut earum nemo recusandae cumque perferendis! Recusandae alias accusamus atque.</p>           
-                    </div>                                   
-                </div>
-            </section>
+        <p>
+          I’m a <strong>Data Engineer and Machine Learning Researcher</strong>
+          passionate about building scalable data systems and applying AI to
+          improve accessibility and real-world usability. My work combines
+          <strong>data engineering, large language models (LLMs)</strong> and
+          <strong>human-centered computing</strong> to develop reliable and
+          socially impactful solutions.
+        </p>
 
-            <!--===== SKILLS =====-->
-            <section class="skills section" id="skills">
-                <h2 class="section-title">Skills</h2>
+        <p>
+          As part of my graduate research at
+          <strong>Stony Brook University</strong>, I developed AI-powered
+          accessibility tools for visually impaired users by integrating
+          <strong>LLMs</strong> with screen-reading systems. The project focused
+          on creating intelligent assistants capable of context-aware responses,
+          enhancing usability and autonomy for non-visual users.
+        </p>
 
-                <div class="skills__container bd-grid">          
-                    <div>
-                        <h2 class="skills__subtitle">Profesional Skills</h2>
-                        <p class="skills__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit optio id vero amet, alias architecto consectetur error eum eaque sit.</p>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-html5 skills__icon'></i>
-                                <span class="skills__name">HTML5</span>
-                            </div>
-                            <div class="skills__bar skills__html">
+        <p>
+          Before graduate school, I worked as a
+          <strong>Data Engineer at Accenture</strong>, where I designed and
+          optimized <strong>ETL pipelines</strong> using Talend and Snowflake,
+          automated workflows, and built a <strong>Python-SQL chatbot</strong>
+          that connected backend data and improved scheduling.
+        </p>
 
-                            </div>
-                            <div>
-                                <span class="skills__percentage">95%</span>
-                            </div>
-                        </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-css3 skills__icon'></i>
-                                <span class="skills__name">CSS3</span>
-                            </div>
-                            <div class="skills__bar skills__css">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">85%</span>
-                            </div>
-                        </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-javascript skills__icon' ></i>
-                                <span class="skills__name">JAVASCRIPT</span>
-                            </div>
-                            <div class="skills__bar skills__js">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">65%</span>
-                            </div>
-                        </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxs-paint skills__icon'></i>
-                                <span class="skills__name">UX/UI</span>
-                            </div>
-                            <div class="skills__bar skills__ux">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">85%</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div>              
-                        <img src="assets/img/work3.jpg" alt="" class="skills__img">
-                    </div>
-                </div>
-            </section>
+        <p>
+          I’m motivated by projects that merge
+          <strong>AI innovation with human impact</strong> — from detecting
+          hallucinations in LLMs to developing sustainable smart energy systems.
+        </p>
 
-            <!--===== WORK =====-->
-            <section class="work section" id="work">
-                <h2 class="section-title">Work</h2>
+        <p>
+          Beyond data and code, I’m usually perfecting an espresso, vlogging
+          about food, or sketching UI ideas while relaxing with chill
+          soundtracks.
+        </p>
 
-                <div class="work__container bd-grid">
-                    <a href="" class="work__img">
-                        <img src="assets/img/work1.jpg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work2.jpg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work3.jpg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work4.jpg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work5.jpg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work6.jpg" alt="">
-                    </a>
-                </div>
-            </section>
+        <!-- Scroll to Skills Section -->
+        <a href="#skills" class="scroll-down">
+          <i class="bx bx-chevron-down"></i>
+        </a>
+      </section>
 
-            <!--===== CONTACT =====-->
-            <section class="contact section" id="contact">
-                <h2 class="section-title">Contact</h2>
+      <!-- ===== SKILLS SECTION ===== -->
+      <!-- Displays core technical skills with icons -->
+      <section id="skills" class="section container">
+        <h2 class="section-title">Skills</h2>
 
-                <div class="contact__container bd-grid">
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="Name" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                        <input type="button" value="Enviar" class="contact__button button">
-                    </form>
-                </div>
-            </section>
-        </main>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <img src="./assets/icons/python.png" alt="Python" />
+            <span>Python</span>
+          </div>
+          <div class="skill-card">
+            <img src="./assets/icons/sql.png" alt="SQL" />
+            <span>SQL</span>
+          </div>
+          <div class="skill-card">
+            <img src="./assets/icons/llm.png" alt="LLMs" />
+            <span>LLMs</span>
+          </div>
+          <div class="skill-card">
+            <img src="./assets/icons/dashboard.png" alt="Tableau" />
+            <span>Tableau</span>
+          </div>
+          <div class="skill-card">
+            <img src="./assets/icons/java.png" alt="Java" />
+            <span>Java</span>
+          </div>
+          <div class="skill-card">
+            <img src="./assets/icons/snowflakes.png" alt="Snowflake" />
+            <span>Snowflake</span>
+          </div>
+          <div class="skill-card">
+            <img src="./assets/icons/js.png" alt="JS" />
+            <span>JavaScript</span>
+          </div>
+          <div class="skill-card">
+            <img src="./assets/icons/react.png" alt="React" />
+            <span>React</span>
+          </div>
+          <div class="skill-card">
+            <img src="./assets/icons/langchain.png" alt="LangChain" />
+            <span>LangChain</span>
+          </div>
+          <div class="skill-card">
+            <img src="./assets/icons/cpp.png" alt="C++" />
+            <span>C++</span>
+          </div>
+        </div>
 
-        <!--===== FOOTER =====-->
-        <footer class="footer">
-            <p class="footer__title">Marlon</p>
-            <div class="footer__social">
-                <a href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
-                <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
-                <a href="#" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
-            </div>
-            <p class="footer__copy">&#169; Bedimcode. All rigths reserved</p>
-        </footer>
+        <!-- Scroll to Projects -->
+        <a href="#projects" class="scroll-down">
+          <i class="bx bx-chevron-down"></i>
+        </a>
+      </section>
 
+      <!-- ===== PROJECTS SECTION ===== -->
+      <!-- Showcases major academic and personal projects -->
+      <section id="projects" class="section container">
+        <h2 class="section-title">Projects</h2>
 
-        <!--===== SCROLL REVEAL =====-->
-        <script src="https://unpkg.com/scrollreveal"></script>
+        <div class="projects-grid">
+          <div class="project-card" data-project="hallu">
+            <h3>Multi-Agent Approach for Detecting Hallucination in LLMs</h3>
+            <p class="skills-inline">Python • NER • Hugging Face</p>
+            <span class="view-more">View Details →</span>
+          </div>
 
-        <!--===== MAIN JS =====-->
-        <script src="assets/js/main.js"></script>
-    </body>
+          <div class="project-card" data-project="energy">
+            <h3>Smart Energy Assistant for Smart Homes</h3>
+            <p class="skills-inline">Python • ARIMA • GPT-4</p>
+            <span class="view-more">View Details →</span>
+          </div>
+
+          <div class="project-card" data-project="happiness">
+            <h3>Global Happiness and Sustainability Analytics</h3>
+            <p class="skills-inline">React.js • D3.js • GCP</p>
+            <span class="view-more">View Details →</span>
+          </div>
+
+          <div class="project-card" data-project="reddit">
+            <h3>Reddit Community Behavioral and Trend Analysis</h3>
+            <p class="skills-inline">TensorFlow • BERT • LSTM</p>
+            <span class="view-more">View Details →</span>
+          </div>
+
+          <div class="project-card" data-project="object">
+            <h3>Object Recognition for Assisting the Visually Impaired</h3>
+            <p class="skills-inline">TensorFlow • OpenCV • Audio</p>
+            <span class="view-more">View Details →</span>
+          </div>
+
+          <div class="project-card" data-project="security">
+            <h3>Security Vulnerability Analysis in PyPI Packages</h3>
+            <p class="skills-inline">Python • Bandit • Security</p>
+            <span class="view-more">View Details →</span>
+          </div>
+        </div>
+
+        <!-- Scroll to Experience -->
+        <a href="#experience" class="scroll-down">
+          <i class="bx bx-chevron-down"></i>
+        </a>
+      </section>
+
+      <!-- ===== PROJECT MODAL ===== -->
+      <!-- Popup shown when a user clicks "View Details" -->
+      <div class="project-modal-overlay" id="project-modal">
+        <div class="project-modal">
+          <button class="modal-close">&times;</button>
+          <h3 id="modal-title"></h3>
+          <div id="modal-description"></div>
+          <a
+            id="modal-link"
+            href="#"
+            target="_blank"
+            class="btn primary"
+            style="display: none"
+          >
+            <i class="bx bxl-github"></i> View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- ===== EXPERIENCE SECTION ===== -->
+      <section id="experience" class="section container">
+        <h2 class="section-title">Experience</h2>
+
+        <div class="experience-grid">
+          <!-- Each card opens a modal on click -->
+          <div class="exp-card" data-exp="gemini">
+            <h3>Graduate Research Assistant</h3>
+            <p>Stony Brook University | Jul 2025 – Present</p>
+            <p>
+              Advancing accessibility systems with Gemini 2.5 and NVDA for
+              multimodal web comprehension.
+            </p>
+            <span class="view-more">View Details →</span>
+          </div>
+
+          <div class="exp-card" data-exp="accessibility">
+            <h3>Graduate Research Assistant</h3>
+            <p>Stony Brook University | Aug 2024 – May 2025</p>
+            <p>
+              Developed NVDA–Gemini accessibility pipeline using Django and
+              LangChain.
+            </p>
+            <span class="view-more">View Details →</span>
+          </div>
+
+          <div class="exp-card" data-exp="ta">
+            <h3>Graduate Teaching Assistant</h3>
+            <p>Stony Brook University | Jan 2024 – Aug 2024</p>
+            <p>
+              Led labs and mentored 80+ students in Java and algorithmic design.
+            </p>
+            <span class="view-more">View Details →</span>
+          </div>
+
+          <div class="exp-card" data-exp="accenture">
+            <h3>Data Engineer</h3>
+            <p>Accenture | Jun 2021 – Aug 2023</p>
+            <p>
+              Built ETL pipelines and a Python–SQL chatbot for automated ticket
+              analytics.
+            </p>
+            <span class="view-more">View Details →</span>
+          </div>
+        </div>
+
+        <!-- Scroll to Education -->
+        <a href="#education" class="scroll-down">
+          <i class="bx bx-chevron-down"></i>
+        </a>
+      </section>
+
+      <!-- EXPERIENCE MODAL (for pop-up details) -->
+      <div id="experience-modal" class="project-modal-overlay">
+        <div class="project-modal">
+          <button class="modal-close">&times;</button>
+          <h3 id="exp-modal-title"></h3>
+          <div id="exp-modal-description"></div>
+        </div>
+      </div>
+
+      <!-- ===== EDUCATION SECTION ===== -->
+      <section id="education" class="section container">
+        <h2 class="section-title">Education</h2>
+
+        <div class="edu-grid">
+          <div class="edu-card">
+            <h3>Stony Brook University – SUNY</h3>
+            <p><em>MS in Computer Science</em> (Aug 2023 – May 2025)</p>
+            <p>
+              Relevant Courses: Data Science, Visualization, AI/ML, Algorithms,
+              Smart Energy Systems
+            </p>
+          </div>
+
+          <div class="edu-card">
+            <h3>GITAM University</h3>
+            <p>
+              <em>B.Tech in Computer Science and Engineering</em> (Jun 2017 –
+              Jun 2021)
+            </p>
+            <p>
+              Relevant Courses: DBMS, AI, ML, Probability & Statistics, Cloud
+              Computing
+            </p>
+          </div>
+        </div>
+
+        <!-- Scroll to Contact -->
+        <a href="#contact" class="scroll-down">
+          <i class="bx bx-chevron-down"></i>
+        </a>
+      </section>
+
+      <!-- ===== CONTACT SECTION ===== -->
+      <section id="contact" class="section container">
+        <h2 class="section-title">Contact</h2>
+
+        <!-- Contact Form (handled by EmailJS) -->
+        <form id="contact-form">
+          <input
+            type="text"
+            name="from_name"
+            placeholder="Your Name"
+            required
+          />
+          <input
+            type="email"
+            name="from_email"
+            placeholder="Your Email"
+            required
+          />
+          <textarea
+            name="message"
+            class="message"
+            placeholder="Message"
+            required
+          ></textarea>
+          <button type="submit" class="btn primary">Send</button>
+        </form>
+
+        <!-- Scroll to Top -->
+        <a href="#home" class="scroll-down">
+          <i class="bx bx-chevron-up"></i>
+        </a>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>© <span id="year"></span> Ankita Sethi. All rights reserved.</p>
+
+      <!-- Footer Socials -->
+      <div class="social-links">
+        <a href="mailto:ankitasethi282@gmail.com"
+          ><i class="bx bx-envelope"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/ankita-sethi21/" target="_blank"
+          ><i class="bx bxl-linkedin"></i
+        ></a>
+        <a href="https://github.com/ankita-sethi" target="_blank"
+          ><i class="bx bxl-github"></i
+        ></a>
+      </div>
+    </footer>
+
+    <!-- ===== MAIN SCRIPT ===== -->
+    <script src="./assets/js/main.js"></script>
+
+    <!-- Reset scroll position to top on refresh -->
+    <script>
+      window.addEventListener("beforeunload", () => window.scrollTo(0, 0));
+      window.addEventListener("load", () =>
+        setTimeout(
+          () =>
+            document
+              .getElementById("home")
+              ?.scrollIntoView({ behavior: "instant" }),
+          10
+        )
+      );
+    </script>
+  </body>
 </html>
