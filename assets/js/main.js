@@ -287,20 +287,79 @@ expModal.addEventListener("click", (e) => {
 // 💌 EMAILJS INTEGRATION (Contact Form)
 // =====================================================
 // Sends messages directly from your site using EmailJS service.
-emailjs.init("o1VKivQQcXMCQJucU"); // your EmailJS public key
+// ===== EmailJS Integration (Improved Validation) =====
+// ===== EmailJS + Inline Validation (Compact Version) =====
+// ===== EmailJS + Strict Inline Validation =====
+emailjs.init("o1VKivQQcXMCQJucU");
 
-document
-  .getElementById("contact-form")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
-    emailjs.sendForm("service_ankita21", "template_knzg5ex", this).then(
-      () => {
-        alert("✅ Message sent successfully! I'll get back to you soon.");
-        this.reset();
-      },
-      (error) => {
-        console.error("Error:", error);
-        alert("❌ Something went wrong. Please try again later.");
-      }
-    );
-  });
+const form = document.getElementById("contact-form");
+const fields = ["from_name", "from_email", "message"];
+
+// ✅ Much stricter email pattern — requires '@' and domain like '.com'
+const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+function showError(input, msg) {
+  let err = input.nextElementSibling;
+  if (!err || !err.classList.contains("error-msg")) {
+    err = document.createElement("span");
+    err.className = "error-msg";
+    input.insertAdjacentElement("afterend", err);
+  }
+  err.textContent = msg;
+}
+
+function clearErrors() {
+  form.querySelectorAll(".error-msg").forEach((e) => (e.textContent = ""));
+}
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  clearErrors();
+
+  let valid = true;
+  const name = form.from_name.value.trim();
+  const email = form.from_email.value.trim();
+  const message = form.message.value.trim();
+
+  // === Name Validation ===
+  if (!name) {
+    showError(form.from_name, "Please enter your name.");
+    valid = false;
+  }
+
+  // === Email Validation ===
+  if (!email) {
+    showError(form.from_email, "Please enter your email address.");
+    valid = false;
+  } else if (!emailPattern.test(email)) {
+    showError(form.from_email, "Please enter a valid email address.");
+    valid = false;
+  }
+
+  // === Message Validation ===
+  if (!message) {
+    showError(form.message, "Please enter your message.");
+    valid = false;
+  }
+
+  if (!valid) return; // ❌ Stop here if any field invalid
+
+  // === EmailJS Send ===
+  emailjs.sendForm("service_ankita21", "template_knzg5ex", form).then(
+    () => {
+      const success = document.createElement("div");
+      success.className = "success-msg";
+      success.textContent = `✅ Message sent! Thank you, ${name}. I'll reply soon.`;
+      form.appendChild(success);
+      form.reset();
+      setTimeout(() => success.remove(), 5000);
+    },
+    () => {
+      const fail = document.createElement("div");
+      fail.className = "error-msg centered";
+      fail.textContent = "❌ Something went wrong. Please try again later.";
+      form.appendChild(fail);
+      setTimeout(() => fail.remove(), 4000);
+    }
+  );
+});
