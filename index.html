@@ -374,7 +374,10 @@
         <div class="blogs-grid">
           <div
             class="blog-card"
-            onclick="window.open('https://medium.com/@ankitasethi282/a-tech-event-in-the-south-bay-svgenais-halloween-horror-stories-0c0213ffbd38', '_blank')"
+            role="link"
+            tabindex="0"
+            onclick="window.open('https://medium.com/@ankitasethi282/a-tech-event-in-the-south-bay-svgenais-halloween-horror-stories-0c0213ffbd38','_blank','noopener,noreferrer')"
+            onkeydown="if(event.key==='Enter' || event.key===' ') { this.click(); }"
           >
             <img
               src="./assets/img/blog1.png"
