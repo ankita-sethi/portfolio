@@ -148,6 +148,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Displays detailed info when "View Details" is clicked.
 
   const projectData = {
+    memberqa: {
+      title: "Member-Aware Question Answering System",
+      description:
+        "Built an intelligent Q-A system that answers natural-language questions using member message history. Implemented message extraction, context filtering, prompt generation and Gemini-powered reasoning. Fully deployed on Render with a live REST API and a lightweight chatbot UI.",
+      skills: "Python, Django, Gemini AI, REST API, Render",
+      link: "https://github.com/ankita-sethi/member-qa",
+    },
+
     hallu: {
       title: "Multi-Agent Approach for Detecting Hallucination in LLMs",
       description:
