@@ -280,6 +280,7 @@ document.querySelectorAll(".exp-card").forEach((card) => {
     const key = card.dataset.exp;
     const data = experienceData[key];
     if (!data) return;
+    modalLink.style.display = "none";
     expTitle.textContent = data.title;
     expDescription.innerHTML = data.description;
     expModal.style.display = "flex";
