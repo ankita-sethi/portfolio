@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) entry.target.classList.add("visible");
       }),
-    { threshold: 0.2 } // only triggers when 20% of the section is visible
+    { threshold: 0.2 }, // only triggers when 20% of the section is visible
   );
 
   document.querySelectorAll(".section").forEach((section) => {
@@ -97,8 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
     navLinks.forEach((link) =>
       link.classList.toggle(
         "active",
-        link.getAttribute("href").includes(current)
-      )
+        link.getAttribute("href").includes(current),
+      ),
     );
   });
 
@@ -194,6 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
       description:
         "Scanned PyPI codebases for unsafe eval and subprocess usage using Bandit static analysis.",
       skills: "Python, Bandit, Security Scanning",
+      link: "https://github.com/ankita-sethi/research-project-salt-pepper",
     },
   };
 
@@ -222,7 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   modalClose.addEventListener(
     "click",
-    () => (projectModal.style.display = "none")
+    () => (projectModal.style.display = "none"),
   );
   projectModal.addEventListener("click", (e) => {
     if (e.target === projectModal) projectModal.style.display = "none";
@@ -368,6 +369,6 @@ form.addEventListener("submit", (e) => {
       fail.textContent = "❌ Something went wrong. Please try again later.";
       form.appendChild(fail);
       setTimeout(() => fail.remove(), 4000);
-    }
+    },
   );
 });

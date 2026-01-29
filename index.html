@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -73,11 +73,7 @@
 
           <!-- Buttons for Resume and Contact -->
           <div class="hero-buttons">
-            <a
-              href="./Ankita_Sethi_Resume.pdf"
-              id="resume-btn"
-              class="btn primary"
-            >
+            <a href="./Ankita_Sethi.pdf" id="resume-btn" class="btn primary">
               <i class="bx bxs-download"></i> Resume
             </a>
             <a href="#contact" class="btn secondary">
@@ -385,8 +381,18 @@
             class="blog-card"
             role="link"
             tabindex="0"
-            onclick="window.open('https://medium.com/@ankitasethi282/a-tech-event-in-the-south-bay-svgenais-halloween-horror-stories-0c0213ffbd38','_blank','noopener,noreferrer')"
-            onkeydown="if(event.key==='Enter' || event.key===' ') { this.click(); }"
+            onclick="
+              window.open(
+                'https://medium.com/@ankitasethi282/a-tech-event-in-the-south-bay-svgenais-halloween-horror-stories-0c0213ffbd38',
+                '_blank',
+                'noopener,noreferrer',
+              )
+            "
+            onkeydown="
+              if (event.key === 'Enter' || event.key === ' ') {
+                this.click();
+              }
+            "
           >
             <img
               src="./assets/img/blog1.png"
@@ -473,8 +479,8 @@
             document
               .getElementById("home")
               ?.scrollIntoView({ behavior: "instant" }),
-          10
-        )
+          10,
+        ),
       );
     </script>
   </body>
