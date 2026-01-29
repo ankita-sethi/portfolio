@@ -9,11 +9,12 @@
 ### 🌟 About Me
 
 I’m passionate about building scalable data systems and integrating AI into real-world accessibility and automation tools.  
+
 At **Stony Brook University**, I developed AI-driven accessibility tools for visually impaired users by integrating **Large Language Models (LLMs)** with screen-reading systems.
 
 Before graduate school, I worked as a **Data Engineer at Accenture**, where I designed ETL pipelines, automated workflows, and built a **Python–SQL chatbot** that improved operational efficiency and data accuracy.
 
-My work blends **data engineering**, **AI research**, and **human-centered design** — turning complex systems into simple, impactful solutions.
+My work blends **data engineering**, **AI research**, and **human-centered design** turning complex systems into simple, impactful solutions.
 
 ---
 
