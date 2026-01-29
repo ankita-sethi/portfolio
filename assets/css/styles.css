@@ -1018,8 +1018,6 @@ footer .social-links a:hover {
   @media (max-width: 768px) {
     .navbar.scrolled {
       background-color: transparent !important;
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
     }
   }
 }
