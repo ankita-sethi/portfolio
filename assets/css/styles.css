@@ -945,16 +945,11 @@ footer .social-links a:hover {
 }
 /* =====================
    MOBILE OPTIMIZATION
-   Blur navbar + scroll works
+   FINAL FIX – navbar visible, blur intact, no overlap
    ===================== */
 
 @media (max-width: 768px) {
-  /* General spacing */
-  .section {
-    padding: 80px 0;
-  }
-
-  /* ===== NAVBAR (BLUR LIKE BEFORE) ===== */
+  /* ===== NAVBAR ===== */
   header {
     position: sticky;
     top: 0;
@@ -965,19 +960,25 @@ footer .social-links a:hover {
     background: transparent;
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
+    padding: 14px 16px;
   }
 
-  /* Hide desktop nav links (no hamburger yet) */
+  /* Hide desktop nav links */
   .nav-links {
     display: none;
   }
 
-  /* ===== HERO SECTION (KEY FIX) ===== */
+  /* 🔑 THIS IS THE KEY FIX */
+  main {
+    padding-top: 72px; /* height of navbar */
+  }
+
+  /* ===== HERO ===== */
   .hero {
     flex-direction: column;
     text-align: center;
-    min-height: auto; /* override desktop 95vh */
-    padding-top: 60px;
+    min-height: auto;
+    padding-top: 40px;
     padding-bottom: 40px;
   }
 
@@ -1005,7 +1006,12 @@ footer .social-links a:hover {
     height: 260px;
   }
 
-  /* ===== PROJECTS ===== */
+  /* ===== SECTIONS ===== */
+  .section {
+    padding: 80px 0;
+  }
+
+  /* Projects */
   .projects-grid {
     grid-template-columns: 1fr;
   }
@@ -1014,19 +1020,19 @@ footer .social-links a:hover {
     padding: 1.4rem;
   }
 
-  /* ===== EXPERIENCE & EDUCATION ===== */
+  /* Experience & education */
   .experience-grid,
   .edu-grid {
     grid-template-columns: 1fr;
   }
 
-  /* ===== MODAL ===== */
+  /* Modal */
   .project-modal {
     width: 92%;
     padding: 22px;
   }
 
-  /* ===== CONTACT ===== */
+  /* Contact */
   #contact-form {
     padding: 28px 20px;
   }
