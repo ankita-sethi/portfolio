@@ -945,21 +945,28 @@ footer .social-links a:hover {
 }
 /* =====================
    MOBILE OPTIMIZATION
-   FINAL FIX – navbar visible, blur intact, no overlap
+   FINAL – blur navbar, no white box
    ===================== */
 
 @media (max-width: 768px) {
-  /* ===== NAVBAR ===== */
+  /* ===== HEADER (THIS FIXES WHITE BOX) ===== */
   header {
     position: sticky;
     top: 0;
     z-index: 1000;
+
+    /* 👇 KEY FIX */
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  [data-theme="dark"] header {
+    background: rgba(15, 23, 42, 0.7);
   }
 
   .navbar {
     background: transparent;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
     padding: 14px 16px;
   }
 
@@ -968,9 +975,9 @@ footer .social-links a:hover {
     display: none;
   }
 
-  /* 🔑 THIS IS THE KEY FIX */
+  /* Push content below navbar */
   main {
-    padding-top: 72px; /* height of navbar */
+    padding-top: 72px;
   }
 
   /* ===== HERO ===== */
@@ -1006,13 +1013,15 @@ footer .social-links a:hover {
     height: 260px;
   }
 
-  /* ===== SECTIONS ===== */
+  /* Sections */
   .section {
     padding: 80px 0;
   }
 
-  /* Projects */
-  .projects-grid {
+  /* Layout */
+  .projects-grid,
+  .experience-grid,
+  .edu-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1020,19 +1029,11 @@ footer .social-links a:hover {
     padding: 1.4rem;
   }
 
-  /* Experience & education */
-  .experience-grid,
-  .edu-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Modal */
   .project-modal {
     width: 92%;
     padding: 22px;
   }
 
-  /* Contact */
   #contact-form {
     padding: 28px 20px;
   }
