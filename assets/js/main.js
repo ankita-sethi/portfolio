@@ -288,7 +288,7 @@ const educationData = {
     title: "Stony Brook University – MS in Computer Science",
     description: `
       <p>Conducted graduate research on large language models, including both independent work and collaborative projects.</p>
-      <p>Served as Secretary of the Computer Science Graduate Student Organization.</p>
+      <p>Elected Secretary of the Computer Science Graduate Student Organization.</p>
     `,
   },
   gitam: {
