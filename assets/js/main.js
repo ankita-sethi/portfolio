@@ -182,6 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
       description:
         "Used BERT + LSTM to analyze sentiment and engagement trends in political subreddits.",
       skills: "Python, NLP, LSTM, ML Ops",
+      link: "https://github.com/ankita-sethi/reddit-data-insights",
     },
     object: {
       title: "Object Recognition for Assisting the Visually Impaired",
@@ -195,6 +196,20 @@ document.addEventListener("DOMContentLoaded", () => {
         "Scanned PyPI codebases for unsafe eval and subprocess usage using Bandit static analysis.",
       skills: "Python, Bandit, Security Scanning",
       link: "https://github.com/ankita-sethi/research-project-salt-pepper",
+    },
+    ev: {
+      title: "EV Charging Demand Forecasting",
+      description:
+        "Built a time series and ML based forecasting system to predict hourly EV charging demand using real world charging session data. Transformed raw session level records into a continuous hourly demand signal through proportional energy distribution and time based feature engineering.Evaluated multiple models including linear regression, LightGBM and AutoML pipelines. Selected a TPOT generated Random Forest model that achieved strong generalization and ranked first on the class Kaggle leaderboard. This project highlights end to end forecasting, careful preprocessing, and model selection for energy demand planning.",
+      skills: "Python, Time Series Forecasting, Scikit-learn, LightGBM, TPOT",
+      link: "https://github.com/ankita-sethi/ev-charging-demand-forecasting",
+    },
+    viz1: {
+      title: "Interactive Visualization of Global YouTube Statistics",
+      description:
+        "Developed an interactive web based visualization tool to explore global YouTube channel statistics from 2023. Built dynamic charts that allow users to analyze popularity, geographic distribution, and performance metrics across hundreds of channels. Implemented interactive controls such as dropdown driven variable selection, scatter plot axis swapping, and chart orientation toggles using D3.js. The project focuses on making large scale social media data intuitive to explore through clear visual analytics and responsive UI design.",
+      skills: "React, D3.js, Data Visualization, JavaScript, HTML, CSS",
+      link: "https://github.com/ankita-sethi/viz-lab-youtube-statistics",
     },
   };
 
