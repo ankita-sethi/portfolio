@@ -543,6 +543,13 @@ body::before {
   z-index: 50;
   cursor: pointer;
 }
+#education .scroll-down {
+  pointer-events: none;
+}
+
+#education .scroll-down i {
+  pointer-events: auto;
+}
 .edu-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
