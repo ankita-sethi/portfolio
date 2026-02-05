@@ -289,6 +289,13 @@ body::before {
     transform 0.3s ease;
   pointer-events: auto;
 }
+.scroll-down {
+  pointer-events: none;
+}
+
+.scroll-down i {
+  pointer-events: auto;
+}
 .scroll-down:hover {
   opacity: 1;
   transform: translateX(-50%) translateY(5px);
