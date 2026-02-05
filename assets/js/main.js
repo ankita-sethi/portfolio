@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ev: {
       title: "EV Charging Demand Forecasting",
       description:
-        "Built a time series and ML based forecasting system to predict hourly EV charging demand using real world charging session data. Transformed raw session level records into a continuous hourly demand signal through proportional energy distribution and time based feature engineering.Evaluated multiple models including linear regression, LightGBM and AutoML pipelines. Selected a TPOT generated Random Forest model that achieved strong generalization and ranked first on the class Kaggle leaderboard. This project highlights end to end forecasting, careful preprocessing, and model selection for energy demand planning.",
+        "Built a time series and ML based forecasting system to predict hourly EV charging demand using real world charging session data. Transformed raw session level records into a continuous hourly demand signal through proportional energy distribution and time based feature engineering. Evaluated multiple models including linear regression, LightGBM and AutoML pipelines. Selected a TPOT generated Random Forest model that achieved strong generalization and ranked first on the class Kaggle leaderboard. This project highlights end to end forecasting, careful preprocessing, and model selection for energy demand planning.",
       skills: "Python, Time Series Forecasting, Scikit-learn, LightGBM, TPOT",
       link: "https://github.com/ankita-sethi/ev-charging-demand-forecasting",
     },
@@ -283,6 +283,22 @@ const experienceData = {
   },
 };
 
+const educationData = {
+  sbu: {
+    title: "Stony Brook University – MS in Computer Science",
+    description: `
+      <p>Conducted graduate research on large language models, including both independent work and collaborative projects.</p>
+      <p>Served as Secretary of the Computer Science Graduate Student Organization.</p>
+    `,
+  },
+  gitam: {
+    title: "GITAM University – B.Tech in Computer Science",
+    description: `
+      <p>Ranked in the top 5% of my cohort and awarded a merit based scholarship for academic excellence.</p>
+      <p>Built strong foundations in DBMS, AI, machine learning, probability, statistics and cloud computing.</p>
+    `,
+  },
+};
 // Elements
 const expModal = document.getElementById("experience-modal");
 const expTitle = document.getElementById("exp-modal-title");
@@ -295,11 +311,33 @@ document.querySelectorAll(".exp-card").forEach((card) => {
     const key = card.dataset.exp;
     const data = experienceData[key];
     if (!data) return;
-    modalLink.style.display = "none";
+
     expTitle.textContent = data.title;
     expDescription.innerHTML = data.description;
     expModal.style.display = "flex";
   });
+});
+
+const eduModal = document.getElementById("education-modal");
+const eduTitle = document.getElementById("edu-modal-title");
+const eduDescription = document.getElementById("edu-modal-description");
+const eduClose = eduModal.querySelector(".modal-close");
+
+document.querySelectorAll(".edu-card").forEach((card) => {
+  card.addEventListener("click", () => {
+    const key = card.dataset.edu;
+    const data = educationData[key];
+    if (!data) return;
+
+    eduTitle.textContent = data.title;
+    eduDescription.innerHTML = data.description;
+    eduModal.style.display = "flex";
+  });
+});
+
+eduClose.addEventListener("click", () => (eduModal.style.display = "none"));
+eduModal.addEventListener("click", (e) => {
+  if (e.target === eduModal) eduModal.style.display = "none";
 });
 
 // Close modal on button click or outside click
@@ -313,8 +351,6 @@ expModal.addEventListener("click", (e) => {
 // =====================================================
 // Sends messages directly from your site using EmailJS service.
 // ===== EmailJS Integration (Improved Validation) =====
-// ===== EmailJS + Inline Validation (Compact Version) =====
-// ===== EmailJS + Strict Inline Validation =====
 emailjs.init("o1VKivQQcXMCQJucU");
 
 const form = document.getElementById("contact-form");
