@@ -30,7 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const typingEl = document.getElementById("typing");
   const roles = [
     "Data Engineer ",
-    "Machine Learning Researcher ",
+    "Machine Learning Engineer ",
+    "Full Stack Engineer "
     "AI Accessibility Innovator ",
   ];
 
