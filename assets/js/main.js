@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const roles = [
     "Data Engineer ",
     "Machine Learning Engineer ",
-    "Full Stack Engineer "
     "AI Accessibility Innovator ",
   ];
 
