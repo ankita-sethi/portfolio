@@ -250,9 +250,18 @@ document.addEventListener("DOMContentLoaded", () => {
 // =====================================================
 // Uses the same modal layout to show detailed experience info.
 const experienceData = {
+  startup: {
+    title: "Software Engineer (Founding Engineer) – Stealth AI Startup",
+    description: `
+    <p>Building the backend architecture for an AI-powered product discovery platform that enables users to find visually similar products using image-based search.</p>
+    <p>Developed scalable APIs using FastAPI and SQLAlchemy to handle image uploads, metadata processing, and product discovery workflows.</p>
+    <p>Designed embedding generation and vector indexing pipelines integrating computer vision models to support similarity search and AI-driven product recommendations.</p>
+    <p>Implemented storage infrastructure using PostgreSQL, Supabase, and cloud object storage to manage image datasets and structured metadata for downstream ML processing.</p>
+  `,
+  },
   gemini: {
     title:
-      "Graduate Research Assistant – Accessibility Systems (Gemini 2.5 + NVDA)",
+      "Graduate Research Assistant/ Software Engineer – Accessibility Systems (Gemini 2.5 + NVDA)",
     description: `
       <p>Integrated Gemini 2.5 with NVDA screen reader to create multimodal web comprehension for blind users.</p>
       <p>Optimized Gemini API latency by 22% via context caching and structured content segmentation.</p>
