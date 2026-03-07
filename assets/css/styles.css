@@ -395,15 +395,16 @@ body::before {
 }
 
 /* -------------------- Skills Section -------------------- */
+/* -------------------- Skills Section -------------------- */
 
-.skills-card-grid {
+.skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 25px;
   margin-top: 50px;
 }
 
-.skill-category-card {
+.skills-card {
   background: rgba(0, 183, 255, 0.05);
   border-left: 4px solid var(--accent);
   border-radius: 14px;
@@ -415,21 +416,21 @@ body::before {
     box-shadow 0.3s ease;
 }
 
-.skill-category-card:hover {
+.skills-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 22px rgba(0, 183, 255, 0.25);
 }
 
-.skill-category-card h3 {
+.skills-card h3 {
   display: flex;
   align-items: center;
   gap: 10px;
   color: var(--accent);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   font-size: 1.1rem;
 }
 
-.skill-category-card p {
+.skills-card p {
   font-size: 0.95rem;
   line-height: 1.6;
   color: var(--fg);
