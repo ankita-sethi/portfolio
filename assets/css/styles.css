@@ -406,6 +406,12 @@ body::before {
   margin-left: auto;
   margin-right: auto;
 }
+.category-icon {
+  width: 28px;
+  height: 28px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
 
 .skills-category::after {
   content: "";
