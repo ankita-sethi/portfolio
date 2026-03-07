@@ -395,13 +395,12 @@ body::before {
 }
 
 /* -------------------- Skills Section -------------------- */
-/* -------------------- Skills Section -------------------- */
 
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 25px;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .skills-card {
@@ -410,7 +409,9 @@ body::before {
   border-radius: 14px;
   padding: 1.6rem;
   text-align: left;
+
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -425,9 +426,10 @@ body::before {
   display: flex;
   align-items: center;
   gap: 10px;
+
   color: var(--accent);
-  margin-bottom: 10px;
   font-size: 1.1rem;
+  margin-bottom: 10px;
 }
 
 .skills-card p {
@@ -440,6 +442,11 @@ body::before {
 .category-icon {
   width: 22px;
   height: 22px;
+}
+.skills-card p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 /* -------------------- Projects Section -------------------- */
 .projects-grid {
