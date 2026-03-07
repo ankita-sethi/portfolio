@@ -395,77 +395,50 @@ body::before {
 }
 
 /* -------------------- Skills Section -------------------- */
-.skills-category {
-  margin-top: 50px;
-  margin-bottom: 10px;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--fg);
 
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  text-align: left;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.category-icon {
-  width: 24px;
-  height: 24px;
-}
-
-.skills-category::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 2px;
-  background: var(--accent);
-  margin-top: 6px;
-  flex-basis: 100%;
-}
-
-.skills-grid {
+.skills-card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 22px;
-  justify-items: center;
-  margin-top: 30px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  margin-top: 50px;
 }
 
-.skill-card {
-  background: var(--skill-card-bg);
-  border-radius: 12px;
-  padding: 20px;
-  height: 110px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 14px var(--skill-card-shadow);
+.skill-category-card {
+  background: rgba(0, 183, 255, 0.05);
+  border-left: 4px solid var(--accent);
+  border-radius: 14px;
+  padding: 1.6rem;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
-.skill-card:hover {
-  transform: translateY(-5px) scale(1.02);
+.skill-category-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 22px rgba(0, 183, 255, 0.25);
 }
 
-.skill-card img {
-  width: 42px;
-  height: 42px;
+.skill-category-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent);
   margin-bottom: 8px;
+  font-size: 1.1rem;
 }
 
-.skill-card span {
-  font-size: 0.9rem;
-  font-weight: 500;
+.skill-category-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
   color: var(--fg);
+  opacity: 0.9;
+}
+
+.category-icon {
+  width: 22px;
+  height: 22px;
 }
 /* -------------------- Projects Section -------------------- */
 .projects-grid {
