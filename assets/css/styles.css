@@ -401,16 +401,19 @@ body::before {
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--fg);
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
   text-align: left;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
 }
 .category-icon {
-  width: 28px;
-  height: 28px;
-  margin-right: 8px;
-  vertical-align: middle;
+  width: 24px;
+  height: 24px;
 }
 
 .skills-category::after {
@@ -420,6 +423,7 @@ body::before {
   height: 2px;
   background: var(--accent);
   margin-top: 6px;
+  flex-basis: 100%;
 }
 
 .skills-grid {
@@ -437,7 +441,6 @@ body::before {
   background: var(--skill-card-bg);
   border-radius: 12px;
   padding: 20px;
-  width: 120px;
   height: 110px;
   display: flex;
   flex-direction: column;
@@ -450,8 +453,7 @@ body::before {
 }
 
 .skill-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 22px var(--skill-card-shadow);
+  transform: translateY(-5px) scale(1.02);
 }
 
 .skill-card img {
