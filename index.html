@@ -70,8 +70,8 @@
         <div class="hero-text">
           <h1>Hi, I’m <span class="highlight">Ankita Sethi</span></h1>
           <p class="hero-subtext">
-            I build Scalable AI Systems. Software engineer focused on backend
-            systems, LLMs, and real-world ML products.
+            Software engineer focused on backend systems, LLMs, and real-world
+            ML products.
           </p>
 
           <h2 id="typing"></h2>
@@ -507,33 +507,59 @@
       <section id="contact" class="section container">
         <h2 class="section-title">Contact</h2>
 
-        <!-- Contact Form (handled by EmailJS) -->
-        <form id="contact-form">
-          <input
-            type="text"
-            name="from_name"
-            placeholder="Your Name"
-            required
-          />
-          <input
-            type="email"
-            name="from_email"
-            placeholder="Your Email"
-            required
-          />
-          <textarea
-            name="message"
-            class="message"
-            placeholder="Message"
-            required
-          ></textarea>
-          <button type="submit" class="btn primary">Send</button>
-        </form>
+        <div class="contact-wrapper">
+          <!-- LEFT SIDE -->
+          <div class="contact-left">
+            <h1>Let’s Connect</h1>
+            <p>
+              Open to backend, AI, and data-focused roles. I enjoy building
+              systems that actually work in production.
+            </p>
 
-        <!-- Scroll to Top -->
-        <a href="#home" class="scroll-down">
-          <i class="bx bx-chevron-up"></i>
-        </a>
+            <div class="contact-details">
+              <p><strong>Location:</strong> Santa Clara, CA</p>
+            </div>
+          </div>
+
+          <!-- RIGHT SIDE FORM -->
+          <form id="contact-form" class="contact-form">
+            <div class="input-row">
+              <input
+                type="text"
+                name="from_name"
+                placeholder="First Name"
+                required
+              />
+              <input type="text" placeholder="Last Name" />
+            </div>
+
+            <input
+              type="email"
+              name="from_email"
+              placeholder="Email"
+              required
+            />
+
+            <input type="text" placeholder="Subject" />
+
+            <textarea name="message" placeholder="Message" required></textarea>
+
+            <button type="submit" class="collaborate-btn">
+              <span> Let’s Collaborate</span>
+              <i>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M5 12h14M13 5l7 7-7 7"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </i>
+            </button>
+          </form>
+        </div>
       </section>
     </main>
 

@@ -114,17 +114,22 @@ header {
   text-decoration: none;
   color: var(--fg);
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 1.05rem; /* base size */
+
   opacity: 0.9;
+  display: inline-block;
+
   transition:
+    font-size 0.25s ease,
     color 0.3s ease,
-    opacity 0.3s ease,
-    text-shadow 0.3s ease;
+    opacity 0.3s ease;
 }
+
 .nav-links a:hover {
+  transform: scale(1.08) translateY(-2px); /* only lift */
+
   color: var(--accent);
   opacity: 1;
-  text-shadow: 0 0 8px rgba(0, 183, 255, 0.5);
 }
 #theme-toggle {
   border: none;
@@ -172,6 +177,7 @@ body::before {
 }
 .hero-text {
   flex: 1;
+  gap: 10px;
   max-width: 520px;
   display: flex;
   flex-direction: column;
@@ -179,8 +185,9 @@ body::before {
   z-index: 2;
 }
 .hero-text h1 {
-  font-size: 2.8rem;
-  margin-bottom: 12px;
+  font-size: 3.2rem;
+  line-height: 1.2;
+  font-weight: 600;
 }
 .hero-subtext {
   font-size: 1.1rem;
@@ -190,6 +197,7 @@ body::before {
 }
 .highlight {
   color: var(--accent);
+  font-weight: 600;
 }
 .hero-text p {
   font-size: 1.2rem;
@@ -216,15 +224,24 @@ body::before {
 }
 .hero-social-bar a {
   color: var(--accent);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   transition:
     transform 0.25s ease,
-    color 0.25s ease;
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    border 0.25s ease;
   opacity: 0.9;
 }
 .hero-social-bar a:hover {
-  transform: scale(1.15);
-  color: #0099ff;
+  transform: scale(1.2);
+
+  border: 1px solid rgba(0, 183, 255, 0.5);
+
+  box-shadow:
+    0 0 0 2px rgba(0, 183, 255, 0.15),
+    0 6px 12px rgba(0, 183, 255, 0.25);
+
+  color: var(--accent);
 }
 
 /* Responsive for Hero Social Bar */
@@ -327,31 +344,130 @@ body::before {
 }
 
 /* -------------------- Buttons -------------------- */
+/* ================= BUTTON BASE ================= */
 .btn {
-  padding: 10px 18px;
-  border-radius: var(--radius);
+  padding: 12px 22px;
+  border-radius: 999px;
   font-weight: 600;
+
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  gap: 8px;
+
   border: none;
   cursor: pointer;
-  transition:
-    background-color var(--transition),
-    color var(--transition);
   text-decoration: none;
+
+  position: relative;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border 0.25s ease;
 }
+
+/* ================= PRIMARY ================= */
 .btn.primary {
-  background-color: var(--accent);
+  background: var(--accent);
   color: #fff;
+
+  box-shadow: 0 4px 12px rgba(0, 183, 255, 0.15);
+  border: 1px solid transparent;
 }
+
+/* ================= SECONDARY ================= */
 .btn.secondary {
-  border: 2px solid var(--accent);
-  color: var(--accent);
-  background: transparent;
+  background: var(--accent); /* same as primary */
+  color: #fff;
+  border: 1px solid transparent;
 }
+
+/* ================= HOVER EFFECT ================= */
 .btn:hover {
-  opacity: 0.85;
+  transform: scale(1.05); /* smooth enlarge */
+}
+
+/* white highlight border */
+.btn.primary:hover,
+.btn.secondary:hover {
+  background: #0369a1; /* darker blue */
+
+  border: 1px solid rgba(255, 255, 255, 0.6);
+
+  box-shadow:
+    0 6px 18px rgba(0, 183, 255, 0.25),
+    0 0 0 2px rgba(255, 255, 255, 0.12);
+}
+
+/* Contact form button */
+.collaborate-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+
+  background: var(--accent);
+  color: white;
+
+  border-radius: 999px;
+
+  /* space for arrow */
+  padding: 15px 170px 15px 31px;
+
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+
+  transition: all 0.4s ease;
+}
+
+/* TEXT */
+.collaborate-btn span {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  transition: transform 0.4s ease;
+}
+
+/* ICON CIRCLE */
+.collaborate-btn i {
+  position: absolute;
+  right: 8px;
+
+  width: 28px;
+  height: 28px;
+
+  background: white;
+  color: black;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 2;
+
+  transition: right 0.4s ease;
+}
+
+/* ARROW */
+.collaborate-btn svg {
+  transform: rotate(-45deg);
+  transition: transform 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.collaborate-btn:hover span {
+  transform: translateX(18px);
+}
+
+.collaborate-btn:hover i {
+  right: calc(100% - 43px);
+}
+
+.collaborate-btn:hover svg {
+  transform: rotate(0deg);
 }
 
 /* -------------------- About Section -------------------- */
@@ -708,6 +824,74 @@ body::before {
 .error-msg.centered {
   text-align: center;
 }
+.contact-wrapper {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+#contact p {
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.contact-left {
+  flex: 1;
+  max-width: 400px;
+  text-align: left;
+}
+
+.contact-left h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.contact-left p {
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.contact-details {
+  margin-top: 20px;
+}
+
+.contact-form {
+  flex: 1;
+  background: rgba(0, 183, 255, 0.05);
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 183, 255, 0.2);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.input-row {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.input-row input {
+  flex: 1;
+  width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 183, 255, 0.2);
+  background: transparent;
+  color: var(--fg);
+}
+
+.contact-form textarea {
+  min-height: 120px;
+}
 
 /* -------------------- Footer -------------------- */
 footer {
@@ -972,7 +1156,13 @@ footer .social-links a:hover {
   .blog-card {
     width: 92%;
   }
+  .contact-wrapper {
+    flex-direction: column;
+  }
 
+  .input-row {
+    flex-direction: column;
+  }
   .blog-banner-full {
     height: 210px;
   }
