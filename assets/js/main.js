@@ -148,12 +148,22 @@ document.addEventListener("DOMContentLoaded", () => {
   // Displays detailed info when "View Details" is clicked.
 
   const projectData = {
+    screentime: {
+      title: "Screen Time Tracker (macOS App)",
+      description:
+        "Engineered a macOS app to track real-time Chrome activity with 5 second interval monitoring using AppleScript and SQLite. Designed a local-first architecture ensuring zero external data transfer and low system overhead. Configured background services via launchd for continuous monitoring and built a lightweight UI using Flask and JavaScript.",
+      skills: "AppleScript, SQLite, Flask, JavaScript, launchd, macOS",
+      link: "https://github.com/ankita-sethi/screen-time-tracker-",
+      youtube: "https://youtu.be/1duwvB4e8Q0?si=IKeKxh16HReXCeL1",
+    },
+
     memberqa: {
       title: "Member-Aware Question Answering System",
       description:
         "Built an intelligent Q-A system that answers natural-language questions using member message history. Implemented message extraction, context filtering, prompt generation and Gemini-powered reasoning. Fully deployed on Render with a live REST API and a lightweight chatbot UI.",
       skills: "Python, Django, Gemini AI, REST API, Render",
       link: "https://github.com/ankita-sethi/member-qa",
+      youtube: "https://youtu.be/x4I4jszN_ss?si=O2UtNMQzu70D8VyD",
     },
 
     hallu: {
@@ -176,6 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Interactive D3.js dashboard analyzing global happiness vs. renewable energy data.",
       skills: "React.js, D3.js, GCP, Node.js",
       link: "https://github.com/ankita-sethi/564-visualization-project",
+      youtube: "https://youtu.be/20UfWQBcqvA?si=oL_JTJLnPSNCDYyY",
     },
     reddit: {
       title: "Reddit Community Behavioral and Trend Analysis",
@@ -217,6 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalTitle = document.getElementById("modal-title");
   const modalDescription = document.getElementById("modal-description");
   const modalLink = document.getElementById("modal-link");
+  const modalYoutube = document.getElementById("modal-youtube");
   const modalClose = projectModal.querySelector(".modal-close");
 
   document.querySelectorAll(".project-card").forEach((card) => {
@@ -232,6 +244,8 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
       modalLink.style.display = data.link ? "inline-flex" : "none";
       if (data.link) modalLink.href = data.link;
+      modalYoutube.style.display = data.youtube ? "inline-flex" : "none";
+      if (data.youtube) modalYoutube.href = data.youtube;
       projectModal.style.display = "flex";
     });
   });
