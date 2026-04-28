@@ -997,8 +997,13 @@ footer .social-links a:hover {
   color: var(--accent);
   font-weight: 600;
 }
-.project-modal a.btn {
+.project-modal .modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
   margin-top: 20px;
+}
+.project-modal a.btn {
   background: var(--accent);
   color: white;
   border: none;
@@ -1007,6 +1012,13 @@ footer .social-links a:hover {
 .project-modal a.btn:hover {
   box-shadow: 0 0 18px rgba(0, 183, 255, 0.8);
   transform: translateY(-2px);
+}
+.project-modal a.btn.youtube {
+  background: #ff0033;
+  box-shadow: 0 0 12px rgba(255, 0, 51, 0.4);
+}
+.project-modal a.btn.youtube:hover {
+  box-shadow: 0 0 18px rgba(255, 0, 51, 0.8);
 }
 .modal-close {
   position: absolute;
