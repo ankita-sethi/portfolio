@@ -447,3 +447,36 @@ form.addEventListener("submit", (e) => {
     },
   );
 });
+
+// #test_change start (premium pass)
+// Scope: scroll-progress bar update + cursor-follow card glow.
+// To revert: delete everything between this marker and "#test_change end (premium pass)".
+(() => {
+  const progressBar = document.getElementById("scroll-progress");
+  if (progressBar) {
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = pct + "%";
+    };
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+    updateProgress();
+  }
+
+  const glowCards = document.querySelectorAll(
+    ".project-card, .exp-card, .edu-card, .skills-card",
+  );
+  glowCards.forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty("--mx", x + "%");
+      card.style.setProperty("--my", y + "%");
+    });
+  });
+})();
+// #test_change end (premium pass)
